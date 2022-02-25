@@ -13,9 +13,6 @@ onMounted(async () => {
 
 <template>
   <Header />
-  <Banner
-    v-if="movieStore.movies.length"
-    :banner-movie="movieStore.movies[0]"
-  />
+  <Banner class="h-full" v-if="movieStore.movies.length" :banner-movie="movieStore.movies[0]" />
   <RouterView />
 </template>
