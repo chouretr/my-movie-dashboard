@@ -7,8 +7,7 @@ const TMDB_TRENDING_MOVIES_API_URL = `https://api.themoviedb.org/3/trending/movi
 export const useMovieStore = defineStore({
   id: "MovieStore",
   state: () => ({
-    movies: [] as Movie[],
-    trendingMovies: [] as Movie[],
+    movies: [] as Movie[]
   }),
   getters: {
     getAllMovies: (state): Movie[] => state.movies,
@@ -21,7 +20,7 @@ export const useMovieStore = defineStore({
     },
     getFavoritesMovies: (state) => {
       return () => state.movies.filter((m) => m.favorite);
-    }
+    },
   },
   actions: {
     async fetchLatestMovies() {

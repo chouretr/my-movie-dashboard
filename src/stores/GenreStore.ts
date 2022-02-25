@@ -6,8 +6,7 @@ const TMDB_GET_GENRE_API_URL = `https://api.themoviedb.org/3/genre/movie/list?ap
 export const useGenreStore = defineStore({
   id: "GenreStore",
   state: () => ({
-    genres: [] as Genre[],
-    fetching: false,
+    genres: [] as Genre[]
   }),
   getters: {
     getAllGenres: function (): Genre[] {
@@ -16,7 +15,6 @@ export const useGenreStore = defineStore({
   },
   actions: {
     async fetchAllGenre() {
-      this.fetching = true;
       const response = await fetch(TMDB_GET_GENRE_API_URL);
       try {
         const result = await response.json();

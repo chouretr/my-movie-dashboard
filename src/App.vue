@@ -4,7 +4,7 @@ import Header from "./layout/Header.vue";
 import Banner from "./components/Banner.vue";
 import { useMovieStore } from "@/stores/MovieStore";
 import { onMounted } from "vue";
-console.log(import.meta.env.TMDB_API_URL)
+
 const movieStore = useMovieStore();
 onMounted(async () => {
   await movieStore.fetchTrendingMovies();
